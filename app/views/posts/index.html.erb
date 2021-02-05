@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="card-columns">
+    <div class="row g-4" data-masonry='{"percentPosition": true }'>
+      <div class="col-12">
+       <% @posts.each do |post| %>
+          <%= link_to post_path(post.id) do %>
+           <div class="card">
+              <%= attachment_image_tag post, :image, class:"card-img-top" %>
+              <div class="card-body">
+                <p class="card-title"><%= post.title %></p>
+                <p>ユーザーネーム：<%= post.user.name %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

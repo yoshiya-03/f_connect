@@ -1,0 +1,41 @@
+<%= form_with model:current_user,  url: {controller: 'users', action: 'update' }, local:true do |f| %>
+	<div class="container">
+    <div class="row">
+      <div class="form-group">
+        <table>
+      		<h4>会員情報編集</h4>
+            <tr>
+        	    <div class="user-form">
+          	    <th><%= f.label "name" %></th>
+         	      <th><%= f.text_field :name, class:"form-control" %></th>
+     	      </tr>
+
+            <tr>
+              <th><%= f.label "based_in" %></th>
+              <th><%= f.text_field :based_in, :size => "60*60", class:"form-control" %></th>
+            </tr>
+            <tr>
+              <th><%= f.label "job_category"%></th>
+              <th><%= f.select :job_category, JobCategory.job_categories.keys,{}, class:"form-control" %></th>
+            </tr>
+            <tr>
+              <th><%= f.label "phone_number"%></th>
+              <th><%= f.text_field :phone_number, class:"form-control" %></th>
+            </tr>
+            <tr>
+              <th><%= f.label "email" %></th>
+              <th><%= f.email_field :email, autocomplete: "email", class:"form-control" %></th>
+            </th>
+         </table>
+       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-4">
+        <%= f.submit "編集内容を保存", class: "btn btn-success" %>
+        <%= link_to "退会する", unsubscribe_path, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+  <div>
+<% end %>
