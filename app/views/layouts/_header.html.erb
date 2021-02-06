@@ -10,6 +10,7 @@
         <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to "案件", posts_path %>
         <%= link_to ' About',homes_about_path,class: 'fas fa-link nav-link text-light' %>
         <%= link_to ' マイページ',current_user,class: 'fas fa-home nav-link text-light' %>
         <li class="nav-item dropdown">

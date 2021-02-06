@@ -4,13 +4,15 @@
   <table>
     <tbody>
       <tr class="form-group">
-        <td>名前</td>
         <td><%= f.label :name %></td>
+        <td></td>
         <td><%= f.text_field :name, autofocus: true, class: "form-control" %></td>
+        <td></td>
+        <td></td>
       </tr>
 
       <tr class="form-group">
-        <td><%= f.label :email, "メールアドレス" %></td>
+        <td><%= f.label :email, "email" %></td>
         <td></td>
         <td><%= f.email_field :email, autocomplete: "email", placeholder: "name@example.com", class: "form-control" %></td>
         <td></td>
@@ -18,14 +20,23 @@
       </tr>
 
       <tr class="form-group">
-        <td><%= f.label :phone_number, "電話番号(ハイフンなし)" %></td>
+        <td><%= f.label :phone_number, "phone_number" %></td>
         <td></td>
         <td><%= f.text_field :phone_number, placeholder: "00012345678", class: "form-control" %></td>
         <td></td>
         <td></td>
       </tr>
+
+       <tr class="form-group">
+        <td><%= f.label :based_in, "based_in" %></td>
+        <td></td>
+        <td><%= f.email_field :based_in, autocomplete: "email", placeholder: "tokyo", class: "form-control" %></td>
+        <td></td>
+        <td></td>
+      </tr>
+
       <tr class="form-group">
-        <td><%= f.label :password, "パスワード(6文字以上)" %></td>
+        <td><%= f.label :password, "password" %></td>
         <td></td>
         <td><%= f.password_field :password, autocomplete: "new-password", class: "form-control" %></td>
         <td></td>

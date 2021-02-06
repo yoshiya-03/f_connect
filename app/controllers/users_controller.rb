@@ -40,8 +40,9 @@ class UsersController < ApplicationController
                                  :works_image,
                                  :email,
                                  :based_in,
+                                 :introduction,
                                  :phone_number,
-                                 :job_category,
+                                 :job_category_id,
                                  :is_active)
   end
 

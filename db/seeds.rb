@@ -14,4 +14,5 @@ User.create!(
   phone_number: '12345678900',
   job_category_id: 2,
   is_active: 'true',
+  introduction: "スタイリストです。"
 )
