@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get 'creators/hairmake'
   get 'creators/photographer'
   
-  resources :posts
+  resources :posts do
+    resources :post_comments, only: [:create, :destroy]
+    resource :book_marks, only: [:create, :destroy]
+  end
   
   resources :users, only: [:edit, :show, :update]
   get 'user/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
