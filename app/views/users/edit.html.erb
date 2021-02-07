@@ -10,6 +10,9 @@
          	      <th><%= f.text_field :name, class:"form-control" %></th>
      	      </tr>
 
+     	         <%= f.label :image %>
+                <!--%= f.attachment_field :profile_image_id, class: "form-control" %>-->
+
             <tr>
               <th><%= f.label "based_in" %></th>
               <th><%= f.text_field :based_in, :size => "60*60", class:"form-control" %></th>
