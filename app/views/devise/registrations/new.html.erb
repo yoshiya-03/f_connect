@@ -30,7 +30,15 @@
        <tr class="form-group">
         <td><%= f.label :based_in, "based_in" %></td>
         <td></td>
-        <td><%= f.email_field :based_in, autocomplete: "email", placeholder: "tokyo", class: "form-control" %></td>
+        <td><%= f.text_field :based_in, autocomplete: "based_in", placeholder: "tokyo", class: "form-control" %></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+       <tr class="form-group">
+        <td><%= f.label :job_category, "job_category" %></td>
+        <td></td>
+        <td><%= f.select :job_category_id, JobCategory.job_categories.keys,{}, class:"form-control" %></th></td></td>
         <td></td>
         <td></td>
       </tr>
