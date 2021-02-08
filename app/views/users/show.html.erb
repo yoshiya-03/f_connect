@@ -1,43 +1,47 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-6'>
-      <h2>My page</h2>
+      <h2>User Page</h2>
       <table class="table">
-
-    <br>
+      <br>
         <tr>
-       <th>name</th>
-              <th><%= @user.name %></th>
-            </tr>
-            <tr>
-              <th>based_in</th>
-              <th><%= @user.based_in %></th>
-            </tr>
-            <tr>
-              <th>job_category</th>
-              <th><%= @user.job_category_id %></th>
-            </tr>
-            <tr>
-              <th>introduction</th>
-              <th><%= @user.introduction %></th>
-            </tr>
-            <tr>
-              <th>phone_number</th>
-              <th><%= @user.phone_number %></th>
-            </tr>
-            <tr>
-              <th>email</th>
-              <th><%= @user.email %></th>
-            </tr>
-          </table>
+          <th>name</th>
+          <th><%= @user.name %></th>
+        </tr>
+        <tr>
+        <th>based_in</th>
+        <th><%= @user.based_in %></th>
+        </tr>
+        <tr>
+          <th>job_category</th>
+          <th><%= @user.job_category_id %></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th><%= @user.introduction %></th>
+        </tr>
+        <tr>
+          <th>phone_number</th>
+          <th><%= @user.phone_number %></th>
+        </tr>
+        <tr>
+          <th>email</th>
+          <th><%= @user.email %></th>
+        </tr>
+        </table>
+           <% if @user.id == current_user.id %>
             <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn btn-success" %>
-
+          <% end %>
 
     <div class='col-md-6'>
       <h2>MY WORKS</h2>
     </div>
   </div>
 </div>
+
+<% if current_user != @user %>
+  <%= link_to 'chatを始める', chat_path(@user.id)%>
+<% end %>
       <!--< @works_images.each do |works_image| %>-->
       <!--     <div class="card">-->
       <!--        <= attachment_image_tag works_image, :image, class:"card-img-top" %>-->
