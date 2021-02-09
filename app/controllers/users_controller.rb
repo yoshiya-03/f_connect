@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @works_images = WorksImage.all
+    @users = User.all
   end
 
   def edit

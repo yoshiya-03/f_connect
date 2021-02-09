@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.image1 {
+  background: image-url('top1.jpg');
+}
+.image2 {
+   background: image-url('top2.jpg');
+}
+.image3 {
+   background: image-url('top3.jpg');
+}
+
+#container{
+  height: 500px;
+}
+
+
 .homes-top-box {
   overflow: hidden;
   white-space: nowrap;
@@ -12,31 +27,31 @@
   margin-top: 40px;
 }
 
+
+
 .homes-top-image {
   border: 1px solid #000;
   margin: 0 auto;
-  height: 430px;
-  background: image-url('top1-img.png');
+  height: 600px;
+  background: image-url('top1.jpg');
   background-size: cover;
   background-position: center;
-  border: 2px solid #333;
-  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
+  border: 1px solid #333;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 10px 10px 15px -10px;
 }
 
 .homes-top-text {
   height: 200px;
-  margin-top: 110px;
+  margin-top: 200px;
   font-size: 21px;
   font-weight: bold;
   color: black;
   text-align: center;
   padding: 1rem 2rem;
   border: 2px solid #333;
-  border-radius: .4em 2em .5em 3em/3em .5em 2em .5em;
   background: rgba(255,255,255,0.9);
-  padding-top: 35px;
+  padding-top: 80px;
 }
 
 .homes-top-under-menu-title {
@@ -48,6 +63,81 @@
   justify-content: space-evenly;
   margin-top: 20px;
 }
+
+
+#hm-icon {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-child(1) {
+  top: 0;
+}
+.menu-trigger span:nth-child(2) {
+  top: 20px;
+}
+.menu-trigger span:nth-child(3) {
+  bottom: 0;
+}
+.menu-trigger.active span:nth-child(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
+  background-color: #fff;
+}
+.menu-trigger.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-child(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+/* ------------------------ */
+/* ------ spメニュー ------ */
+/* ------------------------ */
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+}
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#sp-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
 
 
 

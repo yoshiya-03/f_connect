@@ -1,10 +1,9 @@
       <h2 class="text-center">User Page</h2>
+       <h4 class="text-center">MY WORKS</h4>
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-5'>
       <table class="table">
-        <div class='col-md-7 offset-md-11'>
-          <h4 class="text-center">MY WORKS</h4>
             </div>
               <br>
               <tr>
@@ -38,13 +37,14 @@
         </table>
 
 <% if current_user != @user %>
-  <%= link_to 'chatを始める', chat_path(@user.id), class: "btn btn-info"%>
+  <i class="far fa-comment-dots"><%= link_to 'chatを始める', chat_path(@user.id), class: "btn btn-info"%></i>
 <% end %>
-      <!--< @works_images.each do |works_image| %>-->
-      <!--     <div class="card">-->
-      <!--        <= attachment_image_tag works_image, :image, class:"card-img-top" %>-->
-      <!--        <div class="card-body">-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--  < end %>-->
 
+
+
+        <div class='col-md-7 offset-md-12'>
+
+            <% @users.each do |user| %>
+              <%= attachment_image_tag user, :works_image,  size: "250x250" %>
+            </div>
+        <% end %>
