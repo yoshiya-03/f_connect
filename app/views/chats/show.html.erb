@@ -1,13 +1,16 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
 <%= form_with model: @chat do |f| %>
     <%= f.text_field :message %>
     <%= f.hidden_field :room_id %>
-    <%= f.submit %>
+   <%= f.submit "送信する", class: "btn btn-success" %>
 <% end %>
 <table>
     <thead>
         <tr>
             <td>投稿者名</td>
-            <td>投稿内容</td>
+            <td><i class="far fa-comment-dots"></i></td>
         </tr>
     </thead>
     <tbody>
@@ -19,3 +22,6 @@
         <% end %>
     </tbody>
 </table>
+</div>
+</div>
+</div>

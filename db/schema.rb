@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_040156) do
+ActiveRecord::Schema.define(version: 2021_02_09_103118) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2021_02_07_040156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image_id"
-    t.string "works_image"
+    t.string "works_image_id"
     t.string "phone_number", null: false
     t.string "based_in", null: false
     t.text "introduction"

@@ -5,7 +5,7 @@ class CreatorsController < ApplicationController
   end
 
   def stylist
-      @users = User.where(job_category_id: 3)
+    @users = User.where(job_category_id: 3)
   end
 
   def hairmake
