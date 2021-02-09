@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :set_q, only: [:index, :search]
+
   def new
     @post = Post.new
   end
@@ -27,8 +29,25 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def search
+    @results = @q.result
+  end
+
+  private
+
+  def set_q
+    @q = Post.ransack(params[:q])
+  end
+
   def post_params
     params.require(:post).permit(:title, :image, :description)
+  end
+
+  def ensure_correct_user
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      redirect_to posts_path
+    end
   end
 
 end
