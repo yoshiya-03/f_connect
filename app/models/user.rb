@@ -8,7 +8,9 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :user_rooms
   has_many :chats
-  
+  attachment :profile_image
+  attachment :works_image
+
   enum job_category_id: {
       individual: 0,
       company: 1,
@@ -17,4 +19,9 @@ class User < ApplicationRecord
       hairmake: 4,
       photographer: 5
     }
+    
+  validates :name,presence: true, uniqueness: true, length: { minimum: 1, maximum: 20 }
+
+  validates :introduction, length: { maximum: 60 }
+  
 end

@@ -16,4 +16,13 @@ class CreatorsController < ApplicationController
     @users = User.where(job_category_id: 5)
   end
 
+  private
+
+  def ensure_correct_user
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      redirect_to posts_path
+    end
+  end
+
 end

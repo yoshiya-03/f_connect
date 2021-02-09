@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   def unsubscribe
      @user = current_user.id
   end
@@ -45,7 +44,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name,
-                                 :profile_image_id,
+                                 :profile_image,
                                  :works_image,
                                  :email,
                                  :based_in,
