@@ -1,11 +1,10 @@
-      <h2 class="text-center">User Page</h2>
+      <h2 class="col-md-3 offset-md-1">User Page</h2>
        <h4 class="text-center">MY WORKS</h4>
-<div class='container px-5 px-sm-0'>
+<div class='container px-1'>
   <div class='row'>
     <div class='col-md-5'>
       <table class="table">
             </div>
-              <br>
               <tr>
                 <th><%= attachment_image_tag @user, :profile_image, class: "img-thumbnail", fallback: "no-image.jpg", size: "100x100" %></th>
               </tr>
@@ -32,19 +31,17 @@
                    <% if @user.id == current_user.id %>
                     <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn btn-success" %>
                   <% end %>
+
+<% if current_user != @user %>
+  <i class="far fa-comment-dots"><%= link_to 'chatを始める', chat_path(@user.id), class: "btn btn-outline-info"%></i>
+<% end %>
             </div>
           </div>
         </table>
 
-<% if current_user != @user %>
-  <i class="far fa-comment-dots"><%= link_to 'chatを始める', chat_path(@user.id), class: "btn btn-info"%></i>
-<% end %>
+            <% @user.works_images.each do |image| %>
+            <%= attachment_image_tag image, :works_image, class: "default_image", size: "300x300" %>
 
-
-
-        <div class='col-md-7 offset-md-12'>
-
-            <% @users.each do |user| %>
-              <%= attachment_image_tag user, :works_image,  size: "250x250" %>
-            </div>
         <% end %>
+
+

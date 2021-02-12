@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_103118) do
+ActiveRecord::Schema.define(version: 2021_02_11_111222) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2021_02_09_103118) do
   create_table "job_categories", force: :cascade do |t|
     t.string "name", null: false
     t.integer "category", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "visiter_id"
+    t.integer "visited_id"
+    t.integer "post_id"
+    t.integer "post_comment_id"
+    t.string "action"
+    t.boolean "checked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,7 +84,6 @@ ActiveRecord::Schema.define(version: 2021_02_09_103118) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image_id"
-    t.string "works_image_id"
     t.string "phone_number", null: false
     t.string "based_in", null: false
     t.text "introduction"
@@ -81,6 +91,13 @@ ActiveRecord::Schema.define(version: 2021_02_09_103118) do
     t.integer "job_category_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "works_images", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "works_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

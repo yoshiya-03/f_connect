@@ -2,22 +2,20 @@
 	<div class="container">
     <div class="row">
       <div class="form-group">
-        <table>
+        <table class="table">
       		<h4>会員情報編集</h4>
             <tr>
 
-              <tr>
-     	        <th><%= attachment_image_tag current_user, :works_image, size: "100x100"%></th>
-              <th><label for="inputImage">Works</label>
-            <%= f.attachment_field :works_image %></th>
-            </tr>
-            <tr>
-
-
             <tr>
      	        <th><%= attachment_image_tag current_user, :profile_image, size: "100x100"%></th>
+     	        </tr>
+     	        <tr>
               <th><label for="inputImage">ProfileImage</label>
             <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %></th>
+            </tr>
+              <tr>
+              <th><label for="inputImage">Works</label>
+     	        <th><%= f.attachment_field :works_images_works_images, multiple: true, size: "100x100" %></th>
             </tr>
             <tr>
         	    <div class="user-form">
@@ -33,7 +31,7 @@
             </tr>
             <tr>
               <th><%= f.label "introduction"%></th>
-              <th><%= f.text_field :introduction, class:"form-control" %></th>
+              <th><%= f.text_area :introduction, class:"form-control" %></th>
             </tr>
             <tr>
               <th><%= f.label "phone_number" %></th>
