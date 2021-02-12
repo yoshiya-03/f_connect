@@ -45,13 +45,14 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name,
                                  :profile_image,
-                                 :works_image,
                                  :email,
                                  :based_in,
                                  :introduction,
                                  :phone_number,
                                  :job_category_id,
-                                 :is_active)
+                                 :is_active,
+                                 works_images_works_images: []
+                                 )
   end
 
 end
