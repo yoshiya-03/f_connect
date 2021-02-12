@@ -1,28 +1,36 @@
 <div class="container">
     <div class="row">
       <div class="col-md-8">
-<%= form_with model: @chat do |f| %>
-    <%= f.text_field :message %>
-    <%= f.hidden_field :room_id %>
-   <%= f.submit "送信する", class: "btn btn-success" %>
-<% end %>
 <table>
     <thead>
         <tr>
-            <td>投稿者名</td>
+
             <td><i class="far fa-comment-dots"></i></td>
         </tr>
     </thead>
     <tbody>
-        <% @chats.each do |chat| %>
-            <tr>
-                <td><%= chat.user.name %></td>
-                <td><%= chat.message %></td>
-            </tr>
-        <% end %>
+
+        <% @chats.each do |chat| %> <%# ここのインスタンス変数は皆さんのお使いのインスタンス変数に直してくださいね！ %>
+    <% if chat.user_id == current_user.id %>
+          <div class="visited_user">
+            <strong class="visited_user"><%= chat.message %></strong>
+            <small class="visited_user"><%= chat.user.name %>さん</small>
+        </div>
+    <% else %>
+      <div class="current_user">
+            <strong class="current_user"><%= chat.message %></strong>
+            <small class="current_user"><%= chat.user.name %>さん</small>
+        </div>
+    <% end %>
+<% end %>
     </tbody>
 </table>
 </div>
 </div>
 </div>
+<%= form_with model: @chat do |f| %>
+    <%= f.text_field :message %>
+    <%= f.hidden_field :room_id %>
+   <%= f.submit "送信する", class: "btn btn-success" %>
+<% end %>
 

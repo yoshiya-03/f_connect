@@ -4,49 +4,46 @@
       <div class="form-group">
         <table class="table">
       		<h4>会員情報編集</h4>
-            <tr>
 
-            <tr>
-     	        <th><%= attachment_image_tag current_user, :profile_image, size: "100x100"%></th>
+              <tr>
+     	          <th><%= attachment_image_tag current_user, :profile_image, size: "100x100"%></th>
      	        </tr>
      	        <tr>
-              <th><label for="inputImage">ProfileImage</label>
-            <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %></th>
-            </tr>
+                <th><label for="inputImage">ProfileImage</label>
+                <th><%= f.attachment_field :profile_image %></th></th>
+              </tr>
               <tr>
-              <th><label for="inputImage">Works</label>
-     	        <th><%= f.attachment_field :works_images_works_images, multiple: true, size: "100x100" %></th>
-            </tr>
-            <tr>
-        	    <div class="user-form">
-          	    <th><%= f.label "name" %></th>
-         	      <th><%= f.text_field :name, class:"form-control" %></th>
-     	      </tr>
-              <th><%= f.label "based_in" %></th>
-              <th><%= f.text_field :based_in, :size => "60*60", class:"form-control" %></th>
-            </tr>
-            <tr>
-              <th><%= f.label "job_category" %></th>
-              <th><%= f.select :job_category_id, JobCategory.job_categories.keys,{}, class:"form-control" %></th>
-            </tr>
-            <tr>
-              <th><%= f.label "introduction"%></th>
-              <th><%= f.text_area :introduction, class:"form-control" %></th>
-            </tr>
-            <tr>
-              <th><%= f.label "phone_number" %></th>
-              <th><%= f.text_field :phone_number, class:"form-control" %></th>
-            </tr>
-            <tr>
-              <th><%= f.label "email" %></th>
-              <th><%= f.email_field :email, autocomplete: "email", class:"form-control" %></th>
-            </th>
-         </table>
-       </div>
-    </div>
-
-     <tr>
-
+                <th><label for="inputImage">WorksImage</label>
+                <!--multiple: trueを入れないと複数投稿ができない-->
+     	          <th><%= f.attachment_field :works_images_works_images, multiple: true, size: "100x100" %></th>
+              </tr>
+              <tr>
+          	    <div class="user-form">
+            	    <th><%= f.label "Name" %></th>
+           	      <th><%= f.text_field :name, class:"form-control" %></th>
+       	      </tr>
+                <th><%= f.label "Based_in" %></th>
+                <th><%= f.select :based_in, User.based_ins.keys, {}, class: "btn btn-secondary" %></th>
+              </tr>
+              <tr>
+                <th><%= f.label "Job_Category" %></th>
+                <th><%= f.select :job_category_id, JobCategory.job_categories.keys,{}, class:"form-control" %></th>
+              </tr>
+              <tr>
+                <th><%= f.label "Introduction"%></th>
+                <th><%= f.text_area :introduction, class:"form-control" %></th>
+              </tr>
+              <tr>
+                <th><%= f.label "Phone_Number" %></th>
+                <th><%= f.text_field :phone_number, class:"form-control" %></th>
+              </tr>
+              <tr>
+                <th><%= f.label "Email" %></th>
+                <th><%= f.email_field :email, autocomplete: "email", class:"form-control" %></th>
+              </tr>
+           </table>
+         </div>
+      </div>
 
     <div class="row">
       <div class="col-xs-6 col-xs-offset-4">

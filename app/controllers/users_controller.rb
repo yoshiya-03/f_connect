@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   def withdraw
     @user = User.find(current_user.id)
     @user.update(is_active: false)
-    # @customer.save
     reset_session
     redirect_to root_path
     flash[:notice] = "ご利用ありがとうございました。"
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
                                  :phone_number,
                                  :job_category_id,
                                  :is_active,
-                                 works_images_works_images: []
+                                 works_images_works_images: [] #複数の画像idになるため、配列[]で渡す。
                                  )
   end
 
