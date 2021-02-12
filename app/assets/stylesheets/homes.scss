@@ -2,15 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.image1 {
-  background: image-url('top1.jpg');
-}
-.image2 {
-   background: image-url('top2.jpg');
-}
-.image3 {
-   background: image-url('top3.jpg');
-}
+@import "slick-theme";
+@import "slick";
 
 #container{
   height: 500px;
@@ -24,7 +17,7 @@
 }
 
 .homes-top-wrapper {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 
@@ -65,80 +58,232 @@
 }
 
 
-#hm-icon {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  z-index: 10;
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Oranienbaum);
+
+html {
+
+	-ms-text-size-adjust: 100%;
+
+	-webkit-text-size-adjust: 100%;
+
 }
-.menu-trigger,
-.menu-trigger span {
-  display: inline-block;
-  transition: all .4s;
-  box-sizing: border-box;
+
+*, *:before, *:after {
+
+	-webkit-box-sizing: border-box;
+
+	-moz-box-sizing: border-box;
+
+	box-sizing: border-box;
+
 }
-.menu-trigger {
-  position: relative;
-  width: 50px;
-  height: 44px;
+
+input, textarea {
+
+	-webkit-appearance: none;
+
+	-webkit-border-radius: 0;
+
 }
-.menu-trigger span {
-  position: absolute;
-  left: 0;
+
+button, html input[type="button"],/* 1 */ input[type="reset"], input[type="submit"] {
+
+	-webkit-appearance: button;
+
+	cursor: pointer;
+
+ *overflow:visible;
+
+}
+
+body, img {
+
+	transition: all .2s linear;
+
+	-o-transition: all .2s linear;
+
+	-moz-transition: all .2s linear;
+
+	-webkit-transition: all .2s linear;
+
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, input, main {
+
+	-webkit-box-sizing: border-box;
+
+	-moz-box-sizing: border-box;
+
+	box-sizing: border-box;
+
+	margin: 0;
+
+	padding: 0;
+
+	vertical-align: baseline;
+
+	border: 0;
+
+	outline: 0;
+
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main {
+
+	display: block
+
+}
+
+audio, canvas, video {
+
+	display: inline-block;
+
+ *display:inline;
+
+ *zoom:1
+
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+
+	content: '';
+
+	content: none;
+
+}
+
+.clear {
+
+	clear: both;
+
+	line-height: 0;
+
+	height: 0;
+
+}
+
+a {
+
+	text-decoration: none;
+
+	outline: none;
+
+	color: #010101;
+
+	transition-delay: 0s;
+
+	transition-duration: 0.6s;
+
+	transition-property: all;
+
+	transition-timing-function: ease;
+
+}
+
+a:focus, img:focus, button:focus, .btn:focus {
+
+	outline: none;
+
+}
+
+
+
+::-moz-selection {
+
+ background-color:#e84d49;
+
+ color:#fff;
+
+ text-shadow:none;
+
+}
+
+::selection {
+
+	background-color: #e84d49;
+
+	color: #fff;
+
+	text-shadow: none;
+
+}
+
+@font-face {
+
+	font-family: 'Roboto', sans-serif;
+
+	font-family: 'Oranienbaum', serif;
+
+}
+
+.b {
   width: 100%;
-  height: 4px;
-  background-color: #000;
-  border-radius: 4px;
-}
-.menu-trigger span:nth-child(1) {
-  top: 0;
-}
-.menu-trigger span:nth-child(2) {
-  top: 20px;
-}
-.menu-trigger span:nth-child(3) {
-  bottom: 0;
-}
-.menu-trigger.active span:nth-child(1) {
-  -webkit-transform: translateY(20px) rotate(-45deg);
-  transform: translateY(20px) rotate(-45deg);
-  background-color: #fff;
-}
-.menu-trigger.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-trigger.active span:nth-child(3) {
-  -webkit-transform: translateY(-20px) rotate(45deg);
-  transform: translateY(-20px) rotate(45deg);
-  background-color: #fff;
-}
-/* ------------------------ */
-/* ------ spメニュー ------ */
-/* ------------------------ */
-#sp-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #000;
-  color: #fff;
-  width: 100%;
-  min-height: 100%;
-  display: none;
-  z-index: 9;
-}
-#sp-menu li {
-  text-align: center;
-  margin-bottom: 30px;
-}
-#sp-menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
 }
 
+/*===== Main ===*/
 
+main[role="main-wrapper-image"],main[role="main-wrapper-iamge"] > .over-bg-color{ background: image-url('top1.jpg'); background-size:cover; background-position:50% 0; background-repeat:no-repeat; width:100%; height:100%; position:fixed; width:100%; height:100%}
 
+main[role="main-wrapper-image"] > .over-bg-color{background-color:rgba(255,255,255,0.5); background-image:none; padding:0}
 
+/*===== Header ===*/
 
+header[role="header"]{ position: fixed; bottom:0; left:0; right:0; width:100%; padding:0 5%; z-index:6}
 
+header[role="header"] > hgroup{background-color:rgba(255,255,255,0.7); overflow:hidden; position:relative }
 
+header[role="header"] > hgroup > h1{ padding:0; margin:0; display:inline-block; position:relative; z-index:5}
+
+header[role="header"] > hgroup > h1 > a{ background-color:#353535; text-transform:uppercase; font-family: 'Oranienbaum', serif;text-align:center; font-size:24px; line-height:52px;color:#FFF ;display:inline-block; width:157px; font-weight:500; letter-spacing:5px;  }
+
+header[role="header"] > hgroup > h1 > a:hover{ text-decoration:none}
+
+/*===== Nav ===*/
+
+#menu-button{ display:none}
+
+header[role="header"] > hgroup nav{ float:none; clear:both; text-align:center; display:inline-block; position:absolute; left:0; right:0}
+
+header[role="header"] > hgroup nav ul{ padding:0; margin:0; list-style:none; text-align:center; border:none}
+
+header[role="header"] > hgroup nav ul > li{ float:none; display:inline-block; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:400; margin:0 18.5px}
+
+header[role="header"] > hgroup nav ul > li > a{border-radius:0;border:none; padding:0; line-height:52px; display:block;color:#353535}
+
+header[role="header"] > hgroup nav ul > li.active a,header[role="header"] > hgroup nav ul > li a:hover{ background-color: inherit; border:none; color:#e84d49}
+
+header[role="header"] > hgroup nav .nav-tabs>li.active>a, header[role="header"] > hgroup nav .nav-tabs>li.active>a:focus, header[role="header"] > hgroup nav .nav-tabs>li.active>a:hover{ background-color: inherit; border:none;color:#e84d49}
+
+/*===== Socil-Icons ===*/
+
+header[role="header"] > hgroup .mobile-social{ display:none}
+
+header[role="header"] > hgroup ul[role="socil-icons"]{ list-style:none; padding:0; margin:0; text-align:right; float:right; position:relative; z-index:5}
+
+header[role="header"] > hgroup ul[role="socil-icons"].mobile-social{ display:none}
+
+header[role="header"] > hgroup ul[role="socil-icons"] li{ display:inline-block; margin-right:21px}
+
+header[role="header"] > hgroup ul[role="socil-icons"] li > a{ display:block; line-height:52px; font-size:13px; color:#353535}
+
+header[role="header"] > hgroup ul[role="socil-icons"] li a:hover{ color:#e84d49}
+
+/*===== Footer ===*/
+
+header[role="header"] footer{ text-align:right}
+
+header[role="header"] footer > p,footer.mobile p{ font-size:12px; line-height:50px; color:#353535; font-weight:400}
+
+header[role="header"] footer > p > i,footer.mobile p i{ color:#e84d49; display:inline-block; padding:0 5px}
+
+footer.mobile{ display:none}
+
+/*===== Countdown ===*/
+
+.nav-font {
+
+}
