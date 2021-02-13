@@ -69,8 +69,10 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'jquery-rails'
 gem 'gimei'
 gem 'kaminari','~> 1.2.1'
-gem 'dotenv-rails'
 gem 'pry-byebug'
 gem 'ransack'
 gem 'rubocop-airbnb'
 gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
