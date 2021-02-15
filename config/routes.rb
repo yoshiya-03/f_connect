@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'creators/hairmake'
   get 'creators/photographer'
 
+  resources :users, only: [:edit, :show, :update]
+  get 'user/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
+  patch 'user/withdraw' => 'users#withdraw'
+  
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
@@ -18,9 +22,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:edit, :show, :update]
-  get 'user/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
-  patch 'user/withdraw' => 'users#withdraw'
 
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
