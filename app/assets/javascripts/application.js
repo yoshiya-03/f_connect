@@ -13,7 +13,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -33,6 +32,6 @@ $(function() {
   $('.a').slick({
       dots: true, //スライドの下にドットのナビゲーションを表示
       autoplay: true, //自動再生
-      autoplaySpeed: 3000, //再生スピード
+      autoplaySpeed: 2000, //再生スピード
   });
 });

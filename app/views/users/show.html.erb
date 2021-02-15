@@ -27,18 +27,20 @@
             <th>email</th>
             <th><%= @user.email %></th>
           </tr>
-             <% if @user.id == current_user.id %>
-              <%= link_to "編集する", edit_user_path(current_user.id), class: "btn btn btn-success" %>
+            <% if @user.id == current_user.id %>
+            <%= link_to " 編集する ", edit_user_path(current_user.id), class: "fas fa-user-edit btn btn-outline-info" %>
             <% end %>
             <% if current_user != @user %>
-              <i class="far fa-comment-dots"><%= link_to 'chatを始める', chat_path(@user.id), class: "btn btn-outline-info"%></i>
+            <%= link_to " chatを始める ", chat_path(@user.id), class: "far fa-comment-dots btn btn-outline-info"%></i>
             <% end %>
       </table>
     </div>
-    <div class='col-lg-6'>
-      <% @user.works_images.each do |image| %>
-      <%= attachment_image_tag image, :works_image, class: "default_image", size: "300x300" %>
+    <div class='col-lg-7 offset-xs-1'>
+    <div class="a">
+       <% @user.works_images.each do |image| %>
+       <div class="b"><%= attachment_image_tag image, :works_image, class: "default_image", size: "670x500" %></div>
     <% end %>
+    </div>
   </div>
 </div>
 

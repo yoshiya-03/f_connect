@@ -12,11 +12,11 @@
     <div class="row">
       <div class="wrapper">
         <div class="card-columns">
-          <div class="col-lg-4">
+          <div class="col-lg-12">
            <% @posts.each do |post| %>
               <%= link_to post_path(post.id) do %>
                <div class="card">
-                  <%= attachment_image_tag post, :image, :fill, 300, 300, class:"card-img-top" %>
+                  <%= attachment_image_tag post, :image, :fill, 300, 300, fallback: "no-image.jpg", class:"card-img-top" %>
                   <div class="card-body">
                     <p class="card-title">title : <%= post.title %></p>
                     <p>name : <%= post.user.name %></p>
