@@ -7,7 +7,7 @@ def create
     favorite.save
     redirect_to post_path(post)
     #通知の作成
-    post.create_notification_favorite!(current_user)
+    @post.create_notification_by(current_user)
     respond_to :js
 end
 

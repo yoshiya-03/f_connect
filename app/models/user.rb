@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :user_rooms
+  has_many :rooms, through: :user_rooms
   has_many :chats
   has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
@@ -40,6 +41,6 @@ class User < ApplicationRecord
   validates :name,presence: true, uniqueness: true, length: { minimum: 1, maximum: 20 }
 
   validates :introduction, length: { maximum: 60 }
-  
+
 
 end

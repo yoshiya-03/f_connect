@@ -1,13 +1,14 @@
-<% visiter=notification.visiter %>
-<% post=notification.micropost %>
+<% visiter = notification.visiter %>
+<% post = notification.post %>
+
 
 <div class="user-view clearfix ">
   <%= link_to user_path(notification.visiter) do %>
-    <%=  image_tag notification.visiter.image[:small].url, class:"user-thumb", style:"width: 60px;"%>
+    <%= attachment_image_tag post.user, :profile_image, size:'60x60', fallback: "no-image.jpg", class:"mt-3 rounded-circle"; %>
   <% end %>
   <%== notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
   <br>
-  <% if !@comment.nil? %>
-    <p class="moderate-font"><%= @comment %></p>
+  <% if !@post_comment.nil? %>
+    <p class="moderate-font"><%= @post_comment %></p>
   <% end %>
 </div>
