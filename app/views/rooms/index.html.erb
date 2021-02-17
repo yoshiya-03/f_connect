@@ -1,0 +1,10 @@
+<h1 class="users-heading">メッセージ一覧</h1>
+  <% @rooms.each do |room| %>
+       <%= opponent_user(room)  %>
+     <%= link_to chat_path(@user.id) do %>
+       <%= most_new_message_preview(room) %>
+     <% end %>
+  <% end %>
+
+
+

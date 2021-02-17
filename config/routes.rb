@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :show, :update]
   get 'user/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
   patch 'user/withdraw' => 'users#withdraw'
-  
+
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
@@ -22,10 +22,14 @@ Rails.application.routes.draw do
     end
   end
 
-
+  get 'rooms/index'
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
 
-  resources :notifications, only: :index
+  resources :notifications, only: [:index] do
+    collection do
+      delete :destroy_all
+    end
+  end
 
 end
