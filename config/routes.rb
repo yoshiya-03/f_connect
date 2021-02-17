@@ -25,9 +25,10 @@ Rails.application.routes.draw do
   get 'rooms/index'
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
-  resources :notifications, only: :index do
-    member do
-      delete :destory_all
+
+  resources :notifications, only: [:index] do
+    collection do
+      delete :destroy_all
     end
   end
 

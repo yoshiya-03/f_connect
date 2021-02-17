@@ -11,7 +11,10 @@
       <li>
         <%= link_to " Logout ", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt text-light" %>
         <%= link_to " Task ", posts_path, class: "fa fa-tasks text-light" %>
-        <%= link_to "NOTICE", notifications_path, class: "text-light" %>
+        <% if unchecked_notifications.any? %>
+        <i class="fa fa-circle" style="color: gold;"></i>
+        <% end %>
+        <%= link_to " Notice ", notifications_path, class: "text-light fas fa-bell" %>
         <%= link_to ' 案件募集フォーム ', new_post_path, class: "text-light" %>
         <div id="sp-menu">
       <h2>CREATORS</h2>
