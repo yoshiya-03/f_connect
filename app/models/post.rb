@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  
+
   belongs_to :user
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -8,9 +8,9 @@ class Post < ApplicationRecord
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
+    #このメソッドで、引数で渡されたユーザidがFavoritesテーブル内に存在（exists?）するかどうかを調べる。
   end
-  
-    
+
   def create_notification_by(current_user)
         notification = current_user.active_notifications.new(
           post_id: id,
@@ -24,7 +24,7 @@ class Post < ApplicationRecord
       # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
       temp_ids = PostComment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
       temp_ids.each do |temp_id|
-        save_notification_comment!(current_user, post_comment_id, temp_id['user_id'])
+        save_notification_post_comment!(current_user, post_comment_id, temp_id['user_id'])
       end
       # まだ誰もコメントしていない場合は、投稿者に通知を送る
       save_notification_post_comment!(current_user, post_comment_id, user_id) if temp_ids.blank?
@@ -44,6 +44,6 @@ class Post < ApplicationRecord
     end
     notification.save if notification.valid?
   end
-   
+
 end
 

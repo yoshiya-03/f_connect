@@ -21,7 +21,7 @@ module RoomsHelper
     # 中間テーブルから相手ユーザーのデータを取得
     user_room = room.user_rooms.where.not(user_id: current_user)
     # 相手ユーザーの名前を取得
-    name = user_room[0].user.name
+    name = user_room[0].user.name+" さん"
     # 名前を表示
     tag.p "#{name}", class: "dm_list__content__link__box__name"
   end

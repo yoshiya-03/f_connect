@@ -1,9 +1,10 @@
 <%= form_with model:current_user,  url: {controller: 'users', action: 'update' }, local:true do |f| %>
 	<div class="container">
     <div class="row">
+      <div class="col-lg-6 offset-lg-3">
       <div class="form-group">
         <table class="table">
-      		<h4>会員情報編集</h4>
+      		<h4>プロフィール</h4>
 
               <tr>
      	          <th><%= attachment_image_tag current_user, :profile_image, size: "100x100"%></th>
@@ -19,38 +20,37 @@
               </tr>
               <tr>
           	    <div class="user-form">
-            	    <th><%= f.label "Name" %></th>
+            	    <th><%= f.label " ユーザーネーム",class: "fas fa-user" %></th>
            	      <th><%= f.text_field :name, class:"form-control" %></th>
        	      </tr>
-                <th><%= f.label "Based_in" %></th>
+                <th><%= f.label "  活動拠点", class: "fas fa-flag" %></th>
                 <th><%= f.select :based_in, User.based_ins.keys, {}, class: "btn btn-secondary" %></th>
               </tr>
               <tr>
-                <th><%= f.label "Job_Category" %></th>
+                <th><%= f.label " 職種",class: "fad fa-user-tag" %></th>
                 <th><%= f.select :job_category_id, JobCategory.job_categories.keys,{}, class:"form-control" %></th>
               </tr>
               <tr>
-                <th><%= f.label "Introduction"%></th>
+                <th><%= f.label " 自己紹介" ,class: "fas fa-pen"%></th>
                 <th><%= f.text_area :introduction, class:"form-control" %></th>
               </tr>
               <tr>
-                <th><%= f.label "Phone_Number" %></th>
+                <th><%= f.label " 電話番号", class: "fas fa-phone" %></th>
                 <th><%= f.text_field :phone_number, class:"form-control" %></th>
               </tr>
               <tr>
-                <th><%= f.label "Email" %></th>
+                <th><%= f.label " メール", class: "fas fa-envelope" %></th>
                 <th><%= f.email_field :email, autocomplete: "email", class:"form-control" %></th>
               </tr>
            </table>
+        <%= f.submit "編集内容を保存", class: "btn btn-outline-success" %>
+        <%= link_to "退会する", unsubscribe_path, class: "btn btn-outline-danger" %>
          </div>
       </div>
 
-    <div class="row">
-      <div class="col-xs-6 col-xs-offset-4">
-        <%= f.submit "編集内容を保存", class: "btn btn-success" %>
-        <%= link_to "退会する", unsubscribe_path, class: "btn btn-danger" %>
-      </div>
-    </div>
+
+
+
   </div>
   <div>
 <% end %>
