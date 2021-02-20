@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.top-text1 {
+  color: #00a9bf;
+  font-size: 27px;
+}
 
 #container{
   height: 500px;
@@ -398,3 +401,4 @@ article[role="contact"].contact-pan ul > li i{ padding-right:3px}
 article[role="contact"].contact-pan ul > li > a{ color:#353535;text-decoration:none}
 
 article[role="contact"].contact-pan a:hover{ color:#e84d49}
+

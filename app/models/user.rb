@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
   has_many :user_rooms
   has_many :rooms, through: :user_rooms
   has_many :chats
@@ -14,7 +15,6 @@ class User < ApplicationRecord
   has_many :works_images, dependent: :destroy
   accepts_attachments_for :works_images, attachment: :works_image
   attachment :profile_image
-
 
   enum job_category_id: {
       individual: 0,
@@ -41,6 +41,5 @@ class User < ApplicationRecord
   validates :name,presence: true, uniqueness: true, length: { minimum: 1, maximum: 20 }
 
   validates :introduction, length: { maximum: 60 }
-
 
 end
