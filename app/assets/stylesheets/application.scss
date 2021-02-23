@@ -18,17 +18,18 @@
 @import 'font-awesome';
 @import "slick-theme";
 @import "slick";
+@import url(https://fonts.googleapis.com/css?family=Oranienbaum);
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
 
 
 header {
   background-color: black;
-  height: 75px;
+  height: 62px;
   margin-bottom: 20px;
   font-family: 'Roboto', sans-serif;
 	font-family: 'Oranienbaum', serif;
-	
+
 }
 
   .header_image {
@@ -54,7 +55,7 @@ $social-width: 20%;
 }
 
 html, body {
-  display: flex;
+　display: block;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -75,7 +76,7 @@ html, body {
 .menu-trigger {
   position: relative;
   width: 50px;
-  height: 44px;
+  height: 40px;
 }
 .menu-trigger span {
   position: absolute;
@@ -129,6 +130,15 @@ html, body {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
 }
 
 

@@ -19,7 +19,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
+document.addEventListener("turbolinks:load"
+, function () {
 $(function() {
   $('.menu-trigger').on('click', function(event) {
     $(this).toggleClass('active');
@@ -27,20 +28,18 @@ $(function() {
     event.preventDefault();
   });
 });
+});
 
 
-
+ document.addEventListener("turbolinks:load"
+, function () {
 $(function() {
   $('.a').slick({
-      dots: true, //スライドの下にドットのナビゲーションを表示
+      fade: true,
       autoplay: true, //自動再生
-      arrows: true,
-      autoplaySpeed: 2000, //再生スピード
-      fade: false,
-      // 左右の次へ、前へボタンを表示するかどうか
-      arrows: true,
+      autoplaySpeed: 3000, //再生スピード
       // 無限スクロールにするかどうか。最後の画像の次は最初の画像が表示される。
       infinite: true,
-
   });
+});
 });
