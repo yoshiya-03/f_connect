@@ -8,12 +8,11 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-      <li>
         <%= link_to " お仕事一覧 ", posts_path, class: "fa fa-tasks text-light" %>
         <% if unchecked_notifications.any? %>
         <i class="fa fa-circle" style="color: gold;"></i>
         <% end %>
-        <%= link_to ' 案件募集フォーム ', new_post_path, class: "text-light" %>
+        <%= link_to " 案件募集フォーム ", new_post_path, class: "text-light far fa-newspaper" %>
         <%= link_to " 通知 ", notifications_path, class: "text-light fas fa-bell" %>
         <div id="sp-menu">
       <h2>CREATORS</h2>
@@ -27,7 +26,7 @@
       </ul>
     </div>
     <div id="hm-icon">
-      <a class="menu-trigger" href="#">
+      <a class="menu-trigger">
         <span></span>
         <span></span>
         <span></span>
@@ -40,7 +39,6 @@
       </li>
     <% end %>
         </ul>
-
       </div>
     </div>
   </nav>

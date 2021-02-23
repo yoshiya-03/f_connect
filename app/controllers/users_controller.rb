@@ -31,18 +31,6 @@ class UsersController < ApplicationController
     redirect_to root_path
     flash[:notice] = "ご利用ありがとうございました。"
   end
-  
-  def followings
-    @user =User.find(params[:id])
-    @users =@user.followings.page(params[:page]).per(5)
-    render 'show_followings'
-  end
-
-  def followers
-    @user =User.find(params[:id])
-    @users =@user.followers.page(params[:page]).per(5)
-    render 'show_followers'
-  end
 
   private
 
@@ -52,11 +40,11 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-  
+
   def favorites
     @user = User.find_by(id: params[:id])
     @favorites = Favorite.where(user_id: @user.id)
-  end 
+  end
 
   def user_params
     params.require(:user).permit(:name,

@@ -54,17 +54,11 @@
 }
 
 .homes-top-under-menu {
-  display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
 }
 
 
-
-
-
-
-@import url(https://fonts.googleapis.com/css?family=Oranienbaum);
 
 html {
 
@@ -229,7 +223,7 @@ a:focus, img:focus, button:focus, .btn:focus {
   background-image: image-url('top1.jpg');
   width: 89%;
   margin: 0 auto;
-  height: 680px;
+  height: 800px;
   background-size: cover;
   background-position: center;
 }
@@ -238,7 +232,7 @@ a:focus, img:focus, button:focus, .btn:focus {
   background-image: image-url('top4.jpg');
   width: 89%;
   margin: 0 auto;
-  height: 680px;
+  height: 800px;
   background-size: cover;
   background-position: center;
 }
@@ -247,23 +241,9 @@ a:focus, img:focus, button:focus, .btn:focus {
   background-image: image-url('top3.jpg');
   width: 89%;
   margin: 0 auto;
-  height: 680px;
+  height: 800px;
   background-size: cover;
 }
-
-
-article[role="countdown"].countdown-pan{ padding-top:21.5%}
-
-article[role="countdown"].countdown-pan h2{font-family: 'Oranienbaum', serif; padding:0; margin:0; font-size:24px; line-height:26px; text-transform:uppercase; font-weight:400; letter-spacing:3px}
-
-article[role="countdown"].countdown-pan h2 > span{ font-size:72px; line-height:72px; position:relative; letter-spacing:inherit; display:inline-block}
-
-article[role="countdown"].countdown-pan h2 > span:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-5px; margin:0 auto; background-color:#e84d49}
-
-article[role="countdown"].countdown-pan > p{ text-transform:uppercase; font-weight:700; letter-spacing:3px; margin:0; padding:0; padding-top:29px}
-
-/*===== Main ===*/
-
 
 
 header[role="header"]{ bottom:0; left:0; right:0; width:100%; padding:0 5%; z-index:6}
@@ -280,7 +260,7 @@ header[role="header"] > hgroup > h1 > a:hover{ text-decoration:none}
 
 #menu-button{ display:none}
 
-header[role="header"] > hgroup nav{ float:none; clear:both; text-align:center; display:inline-block; position:absolute; left:0; right:0}
+header[role="header"] > hgroup nav{ float:none; clear:both; text-align:center; display:inline-block; position:absolute; left:30; right:50}
 
 header[role="header"] > hgroup nav ul{ padding:0; margin:0; list-style:none; text-align:center; border:none}
 
@@ -291,20 +271,6 @@ header[role="header"] > hgroup nav ul > li > a{border-radius:0;border:none; padd
 header[role="header"] > hgroup nav ul > li.active a,header[role="header"] > hgroup nav ul > li a:hover{ background-color: inherit; border:none; color:#e84d49}
 
 header[role="header"] > hgroup nav .nav-tabs>li.active>a, header[role="header"] > hgroup nav .nav-tabs>li.active>a:focus, header[role="header"] > hgroup nav .nav-tabs>li.active>a:hover{ background-color: inherit; border:none;color:#e84d49}
-
-/*===== Socil-Icons ===*/
-
-header[role="header"] > hgroup .mobile-social{ display:none}
-
-header[role="header"] > hgroup ul[role="socil-icons"]{ list-style:none; padding:0; margin:0; text-align:right; float:right; position:relative; z-index:5}
-
-header[role="header"] > hgroup ul[role="socil-icons"].mobile-social{ display:none}
-
-header[role="header"] > hgroup ul[role="socil-icons"] li{ display:inline-block; margin-right:21px}
-
-header[role="header"] > hgroup ul[role="socil-icons"] li > a{ display:block; line-height:52px; font-size:13px; color:#353535}
-
-header[role="header"] > hgroup ul[role="socil-icons"] li a:hover{ color:#e84d49}
 
 /*===== Footer ===*/
 
@@ -318,19 +284,19 @@ footer.mobile{ display:none}
 
 /*===== Countdown ===*/
 
-article[role="countdown"].countdown-pan{ padding-top:21.5%}
+article[role="countdown"].countdown-pan{ padding:20px 0 0 30px}
 
-article[role="countdown"].countdown-pan h2{font-family: 'Oranienbaum', serif; padding:0; margin:0; font-size:24px; line-height:26px; text-transform:uppercase; font-weight:400; letter-spacing:3px}
+article[role="countdown"].countdown-pan h2{font-family: 'Oranienbaum', serif; padding:0; margin:0; font-size:24px; line-height:37px; text-transform:uppercase; font-weight:400; letter-spacing:3px}
 
 article[role="countdown"].countdown-pan h2 > span{ font-size:72px; line-height:72px; position:relative; letter-spacing:inherit; display:inline-block}
 
 article[role="countdown"].countdown-pan h2 > span:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-5px; margin:0 auto; background-color:#e84d49}
 
-article[role="countdown"].countdown-pan > p{ text-transform:uppercase; font-weight:700; letter-spacing:3px; margin:0; padding:0; padding-top:29px}
+article[role="countdown"].countdown-pan > p{ text-transform:uppercase; font-weight:700; letter-spacing:3px; margin:0; padding-bottom:20px; padding-top:29px}
 
 /*===== Page-title ===*/
 
-article header.page-title h2{ text-align:center;font-family: 'Oranienbaum', serif; text-transform:uppercase; font-size:24px; line-height:26px; color:white; font-weight:400; letter-spacing:3px; position:relative; margin-bottom:36px; padding:0; margin-top:0}
+article header.page-title h2{ text-align:center;font-family: 'Oranienbaum', serif; text-transform:uppercase; font-size:24px; line-height:36px; color:white; font-weight:400; letter-spacing:3px; position:relative; margin-bottom:36px; padding:0; margin-top:0}
 
 article header.page-title h2:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-12px; margin:0 auto; background-color:#e84d49}
 
@@ -338,9 +304,9 @@ article header.page-title h2:after{ content:""; display:block; width:98px; heigh
 
 
 
-article[role="introduction"].introduction-pan p{ letter-spacing:1px; line-height:18px; font-weight:300}
+article[role="introduction"].introduction-pan p{ letter-spacing:1px; line-height:36px; font-weight:300 }
 
-article[role="introduction"].introduction-pan ul{ margin:0; padding:0; text-align:center; padding-top:50px;}
+article[role="introduction"].introduction-pan ul{ margin:0; padding:0; text-align:center; padding-top:80px;}
 
 article[role="introduction"].introduction-pan ul > li{ display:inline-block; margin:0 25px}
 
@@ -392,7 +358,7 @@ article[role="contact"].contact-pan h3{ font-size:30px; line-height:32px; font-w
 
 article[role="contact"].contact-pan h3 > a{ color:#353535; text-decoration:none}
 
-article[role="contact"].contact-pan ul{ text-align:center; list-style:none; padding:0; margin:0; padding-top:8px}
+article[role="contact"].contact-pan ul{ text-align:center; list-style:none; padding-bottom:25px; margin:0; padding-top:15px}
 
 article[role="contact"].contact-pan ul > li{ display:inline-block; font-size:19px; line-height:20px; margin:0 4px}
 

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.chat {
+    background-image: linear-gradient(#EEFFFF, white);
+}
+
 .chat-form {
   text-align: right;
   margin-right: 150px;
@@ -37,3 +41,4 @@
     box-sizing: border-box;
     padding: 10px;
 }
+
