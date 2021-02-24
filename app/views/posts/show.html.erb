@@ -1,60 +1,46 @@
 <div class="container">
   <div class="row">
-    <div class="wrapper">
+    <div class="col-lg-5">
+      <div class="card" style="width: 21rem;">
+          <%= attachment_image_tag @post, :image,size:'334x320', fallback: "post_no_image.jpg" %>
+          <div class="card-body">
+            <%= link_to user_path(@post.user.id) do %>
+            <%= attachment_image_tag @post.user, :profile_image, size:'60x60', fallback: "no-image.jpg", class:"mt-3 rounded-circle"; %>
+            <% end %>
+          <p>　タイトル：<%= @post.title %></p>
+            <%= link_to user_path(@post.user.id) do %>
+          <p>　投稿者 : <%= @post.user.name %></p>
+            <% end %>
+          <p>  説明：<%= @post.description %></p>
 
-        <div class= data-masonry='{"percentPosition": true }'>
-          <div class="col-lg-6">
-            <div class="card">
-                <%= attachment_image_tag @post, :image,size:'330x330' %>
-              <div class="card-body">
-                <%= link_to user_path(@post.user.id) do %>
-                <%= attachment_image_tag @post.user, :profile_image, size:'60x60', fallback: "no-image.jpg", class:"mt-3 rounded-circle"; %>
-                <% end %>
-                <p>　タイトル：<%= @post.title %></p>
-                <%= link_to user_path(@post.user.id) do %>
-                <p>　投稿者 : <%= @post.user.name %></p>
-                <% end %>
-
-               <% if @post.user == current_user %>
-                 <%= link_to "削除", post_path(@post), method: :delete %>
-                 <%= link_to "編集", edit_post_path(@post) %>
-               <% end %>
-                <div class="favorites_buttons_<%= @post.id %>">
-                  <%= render 'favorites/favorite-btn', post: @post %>
-                </div>
-                <p>コメント件数：<%= @post.post_comments.count %></p>
-                <p>投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
-                </div>
-              </div>
+           <% if @post.user == current_user %>
+             <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger"%>
+             <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
+           <% end %>
+            <div class="favorites_buttons_<%= @post.id %>">
+              <%= render 'favorites/favorite-btn', post: @post %>
+            </div>
+            <p>コメント件数：<%= @post.post_comments.count %></p>
+            <p>投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
+            <%= render 'posts/tag_list', tag_list: @post.tag_list %>
             </div>
           </div>
-
-            <div class="col-lg-3">
-              <table class="table">
-            説　明：<%= @post.description %>
-            </table>
-
-            <% @post.post_comments.each do |post_comment| %>
-            <%= attachment_image_tag post_comment.user, :profile_image, size:'60x60', fallback: "no-image.jpg", class:"mt-3 rounded-circle"; %>
-            <%= post_comment.user.name %>
-            <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-            <% if post_comment.user == current_user %>
-
-            <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
-            <% end %>
-            <% end %>
-            </div>
-            <div class="new-comment text-center">
-              <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
-              <%= f.text_area :comment, rows:'7',placeholder: "コメントを追加" %>
-              <%= f.submit "送信する", class: "btn btn-success" %>
-              <% end %>
-            </div>
-        </div>
       </div>
-    </div>
-  </div>
+      <!--コメント-->
+      <div class="row">
+          <% if user_signed_in? %>
+          <div class="comment-create">
+            <h4>コメントする</h4>
+              <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post: @post } %>
+          </div>
+          <% end %>
+          <hr>
 
-
+          <ul>
+           <li id="post_comments_area">
+            <%= render partial: 'post_comments/index', locals: { post_comments: @post_comments } %>
+          </li>
+          </ul>
+      </div>
 
 
