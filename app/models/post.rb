@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
   has_many :notifications, dependent: :destroy
   attachment :image
   acts_as_taggable

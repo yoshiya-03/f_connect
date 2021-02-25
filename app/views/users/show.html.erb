@@ -1,9 +1,8 @@
-      <h2 class="col-md-3 offset-md-1">User Page</h2>
-       <h4 class="text-center">MY WORKS</h4>
-
-      <div class="container">
-       <div class="row profile">
-	    	<div class="col-lg-5">
+<h2 class="col-md-3 offset-md-1">User Page</h2>
+  <h4 class="text-center">MY WORKS</h4>
+    <div class="container">
+      <div class="row profile">
+    	  <div class="col-lg-5">
           <table class="table">
             <tr>
               <th><%= attachment_image_tag @user, :profile_image, class: "img-thumbnail", fallback: "no-image.jpg", size: "100x100", class:"mt-3 rounded-circle";  %></th>
@@ -42,16 +41,17 @@
               <% if current_user != @user %>
                 <%= link_to " chatを始める ", chat_path(@user.id), class: "far fa-comment-dots btn btn-outline-info"%></i>
               <% end %>
-          </table>
-          </div>
-          <div class='col-lg-7 offset-xs-1'>
-          <div class="a">
-             <% @user.works_images.each do |image| %>
-             <div class="b"><%= attachment_image_tag image, :works_image, class: "default_image", size: "670x500" %></div>
-          <% end %>
-        </div>
+        </table>
+      </div>
+      
+      <div class='col-lg-7 offset-xs-1'>
+      <div class="a">
+         <% @user.works_images.each do |image| %>
+         <div class="b"><%= attachment_image_tag image, :works_image, class: "default_image", size: "670x500" %></div>
+      <% end %>
       </div>
     </div>
   </div>
+</div>
 
 

@@ -1,7 +1,7 @@
 <div class="text-center">
-<h4>Task検索</h4>
-<%= search_form_for @q, url: search_posts_path do |f| %>
-  <%= f.label :title_cont %>
+<h4>検索</h4>
+<%= search_form_for @search do |f| %>
+  <%= f.label :キーワードを入力 %>
   <%= f.search_field :title_cont %>
   <%= f.submit '検索' %>
   </div>
@@ -33,11 +33,11 @@
                      <%= render 'posts/tag_list', tag_list: post.tag_list %>
                   </div>
                 </div>
-
+            
             <% end %>
           </div>
+      </div>
     </div>
   </div>
 </div>
- </div>
 

@@ -8,14 +8,16 @@ class PostsController < ApplicationController
    end
 
   def index
+    #@posts = Post.all　は消してOK!
+    @search = Post.ransack(params[:q])
+    @posts = @search.result
     @tags = ActsAsTaggableOn::Tag.all
     # タグの一覧表示
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+       @posts = Post.tagged_with(params[:tag])
       # タグ検索時にそのタグずけしているものを表示
     else
-    @posts = Post.all
-    @posts = Post.page(params[:page]).reverse_order
+
     end
   end
 
@@ -23,8 +25,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if
-     @post.save
-     redirect_to post_path(@post), notice: "新規投稿しました。"
+      @post.save
+      redirect_to post_path(@post), notice: "新規投稿しました。"
     else
       @tags = ActsAsTaggableOn::Tag.all
       render 'new'
@@ -73,15 +75,15 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
   end
 
-  def post_params
-    params.require(:post).permit(:title, :image, :description, :tag_list)
-  end
-
   def ensure_correct_user
     @post = Post.find(params[:id])
     unless @post.user == current_user
       redirect_to posts_path
     end
+  end
+  
+  def post_params
+    params.require(:post).permit(:title, :image, :description, :tag_list)
   end
 
 end
