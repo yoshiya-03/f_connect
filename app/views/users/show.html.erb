@@ -37,7 +37,8 @@
               <% end %>
               <% if @user.id == current_user.id %>
                 <%= link_to " 編集する ", edit_user_path(current_user.id), class: "fas fa-user-edit btn btn-outline-success" %>
-                <%= link_to 'DM一覧', rooms_index_path, class: "far fa-comments btn btn-outline-info" %>
+                <%= link_to " ブックマーク一覧 ", favorites_users_path, class: "fas fa-clipboard-check btn btn-outline-primary" %>
+                <%= link_to ' DM一覧', rooms_index_path, class: "far fa-comments btn btn-outline-info" %>
               <% end %>
               <% if current_user != @user %>
                 <%= link_to " chatを始める ", chat_path(@user.id), class: "far fa-comment-dots btn btn-outline-info"%></i>

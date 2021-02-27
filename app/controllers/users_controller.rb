@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     redirect_to root_path
     flash[:notice] = "ご利用ありがとうございました。"
   end
+  
+  def favorite
+    @user = User.find_by(id: params[:id])
+    @favorites = Favorite.where(user_id: @user.id)
+  end
 
   private
 
