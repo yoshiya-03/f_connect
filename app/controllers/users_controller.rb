@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
  before_action :authenticate_user!
-# before_action :ensure_correct_user, only: [:edit, :update]
-
+ 
   def show
     @user = User.find(params[:id])
     @users = User.all
@@ -47,8 +46,8 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @user = User.find_by(id: params[:id])
-    @favorites = Favorite.where(user_id: @user.id)
+    @user = current_user
+    @favorite_posts = FavoritePost.where(user_id: current_user.id)
   end
 
   def user_params
