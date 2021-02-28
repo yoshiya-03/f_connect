@@ -245,6 +245,10 @@ a:focus, img:focus, button:focus, .btn:focus {
   background-size: cover;
 }
 
+.top-text111 {
+  color: red;
+}
+
 
 header[role="header"]{ bottom:0; left:0; right:0; width:100%; padding:0 5%; z-index:6}
 
@@ -292,7 +296,7 @@ article[role="countdown"].countdown-pan h2 > span{ font-size:72px; line-height:7
 
 article[role="countdown"].countdown-pan h2 > span:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-5px; margin:0 auto; background-color:#e84d49}
 
-article[role="countdown"].countdown-pan > p{ text-transform:uppercase; font-weight:700; letter-spacing:3px; margin:0; padding-bottom:20px; padding-top:29px}
+article[role="countdown"].countdown-pan > p{ text-transform:uppercase; font-weight:700; letter-spacing:3px; margin:0; padding-bottom:60px; padding-top:60px}
 
 /*===== Page-title ===*/
 
@@ -302,7 +306,7 @@ article header.page-title h2:after{ content:""; display:block; width:98px; heigh
 
 /*===== Introduction ===*/
 
-
+article[role="introduction"].countdown-pan{ padding:20px 0 0 30px}
 
 article[role="introduction"].introduction-pan p{ letter-spacing:1px; line-height:36px; font-weight:300 }
 
@@ -310,15 +314,7 @@ article[role="introduction"].introduction-pan ul{ margin:0; padding:0; text-alig
 
 article[role="introduction"].introduction-pan ul > li{ display:inline-block; margin:0 25px}
 
-article[role="introduction"].introduction-pan ul > li,article[role="introduction"].introduction-pan ul > li > i,article[role="introduction"].introduction-pan ul > li > h6,article[role="subscribe"].subscribe-pan form label,article[role="subscribe"].subscribe-pan form label i{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
 
-article[role="introduction"].introduction-pan ul > li > i{ font-size:26px; padding-bottom:18px}
-
-article[role="introduction"].introduction-pan ul > li > h6{ font-weight:700; font-size:12px; line-height:13px; text-transform:uppercase; letter-spacing:2px}
-
-article[role="introduction"].introduction-pan ul > li > p{ font-size:12px; line-height:18px; letter-spacing:inherit; padding-top:5px}
-
-article[role="introduction"].introduction-pan ul > li:hover i{ color:#e84d49}
 
 /*===== Subscribe ===*/
 
@@ -353,12 +349,13 @@ article[role="subscribe"].subscribe-pan > p{ font-size:13px; letter-spacing:1px;
 
 /*===== Contact ===*/
 
+article[role="contact"].countdown-pan{ padding:0px 0 0 30px}
 
 article[role="contact"].contact-pan h3{ font-size:30px; line-height:32px; font-weight:700}
 
 article[role="contact"].contact-pan h3 > a{ color:#353535; text-decoration:none}
 
-article[role="contact"].contact-pan ul{ text-align:center; list-style:none; padding-bottom:25px; margin:0; padding-top:15px}
+article[role="contact"].contact-pan ul{ text-align:center; list-style:none; padding-bottom:25px; margin:60px; padding-top:15px}
 
 article[role="contact"].contact-pan ul > li{ display:inline-block; font-size:19px; line-height:20px; margin:0 4px}
 
