@@ -53,9 +53,9 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: "編集"
+      redirect_to post_path(@post), notice: "編集しました"
     else
-      render "edit"
+      render "edit", notice: "編集に失敗しました"
     end
   end
 
