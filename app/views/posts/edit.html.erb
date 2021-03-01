@@ -1,23 +1,8 @@
-<% if @post.errors.any? %>
-    <%= @post.errors.count %> errors prohibited this obj from being saved:
-    <% @post.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <%= render 'layouts/errors' %>
   		<h1>案件編集</h1>
-  		<% if @post.errors.any? %>
-      <div id="error_explanation">
-        <h3><%= @post.errors.count %>error prohibited this obj from being saved:</h3>
-        <ul>
-          <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
   	<%= render 'form', post: @post %>
 		<%= link_to 'Show', post_path(@post), class: "post_#{@post.id}" %> |
 		<%= link_to 'Back', posts_path, class: "back" %>
