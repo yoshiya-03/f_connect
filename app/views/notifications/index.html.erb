@@ -2,18 +2,24 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-       <%= link_to destroy_all_notifications_path, method: :delete do %>
-          <i class="fas fa-trash" style="color: black;"></i>
-          <h7 style="color: black;">全削除</h7>
-      <% end %>
-      <hr>
-      <% if @notifications.exists? %>
+        <table class="table">
+          <thead>
+            <tr>
+            <%= link_to destroy_all_notifications_path, method: :delete do %>
+              <i class="fas fa-trash" style="color: black;"></i>
+              <h7 style="color: black;">全削除</h7>
+            <% end %>
+            <hr>
+            <% if @notifications.exists? %>
           <div class="users-index">
             <%= render @notifications %>
           </div>
-      <% else %>
+          <% else %>
           <p>通知はありません</p>
-      <% end %>
-      </div>
+          <% end %>
+        </tr>
+        </thead>
+      </table>
+     </div>
     </div>
   </div>

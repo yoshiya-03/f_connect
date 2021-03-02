@@ -27,8 +27,8 @@
               <th><%= f.select :based_in, User.based_ins.keys, {}, class: "btn btn-secondary" %></th>
             </tr>
             <tr>
-              <th><%= f.label " 職種",class: "fad fa-user-tag" %></th>
-              <th><%= f.select :job_category_id, JobCategory.job_categories.keys,{}, class:"form-control" %></th>
+              <th><%= f.label " 職種",class: "fas fa-user-tag" %></th>
+              <th><%= f.select :job_category_id, User.job_category_ids.keys,{}, class:"form-control" %></th>
             </tr>
             <tr>
               <th><%= f.label " 自己紹介" ,class: "fas fa-pen" %></th>

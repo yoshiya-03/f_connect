@@ -40,6 +40,7 @@ class User < ApplicationRecord
   end
 
   def create_notification_follow!(current_user)
+    @user.create_notification_follow!(current_user)
     temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(
@@ -51,12 +52,14 @@ class User < ApplicationRecord
   end
 
   enum job_category_id: {
-      individual: 0,
-      company: 1,
-      designer: 2,
-      stylist: 3,
-      hairmake: 4,
-      photographer: 5
+      "----":0,
+      individual: 1,
+      company: 2,
+      student: 3,
+      designer: 4,
+      stylist: 5,
+      hairmake: 6,
+      photographer: 7
     }
 
     enum based_in:{

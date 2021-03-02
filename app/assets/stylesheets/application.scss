@@ -25,22 +25,37 @@
 
 header {
   background-color: black;
-  height: 62px;
+  height: 80px;
   margin-bottom: 20px;
   font-family: 'Roboto', sans-serif;
 	font-family: 'Oranienbaum', serif;
-
+	letter-spacing:4px;
 }
+
+a.text-light.fas.fa-bell {
+    margin-left: 12px;
+}
+
+a.text-light.fas.fa-newspaper {
+    margin-left: 12px;
+}
+
+a.text-light.fa.fa-tasks {
+    margin-left: 12px;
+}
+
 
   .header_image {
 		display: block;
 		margin: auto;
-		width: 90px;
-		height: 45px;
+		width: 80px;
+		height: 55px;
 		font-size: 0;
 	  background-image: image-url('header1.jpg');
-	  background-size: cover;
+	  background-size: 80px;
 	}
+
+
 
 $dk-blue: #1E83AE;
 $blue: #3D5B94;
