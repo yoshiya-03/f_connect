@@ -6,10 +6,11 @@ class PostCommentsController < ApplicationController
     @post_comment = @post.post_comments.build(post_comment_params)
     # buildを使うことで、@postのidをpost_idに含んだ形でcommentインスタンスを作成。 保存がされると、render :indexによって「app/views/post_comments/index.js.erb」を探しにいく
     @post_comment.user_id = current_user.id
-    @post_comment.save
-    render :index
-    #　通知の作成
-    @post.create_notification_post_comment!(current_user,@post_comment.id)
+    if @post_comment.save!
+     #　通知の作成
+      @post.create_notification_post_comment!(current_user,@post_comment.id)
+      render :index
+    end
   end
 
   def destroy
