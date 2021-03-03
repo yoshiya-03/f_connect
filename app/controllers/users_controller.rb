@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
  before_action :authenticate_user!
- 
+
   def show
     @user = User.find(params[:id])
     @users = User.all
   end
-
+  
   def edit
     @user = current_user.id
   end
@@ -30,12 +30,12 @@ class UsersController < ApplicationController
     redirect_to root_path
     flash[:notice] = "ご利用ありがとうございました。"
   end
-  
+
   def favorite
     @user = User.find_by(id: params[:id])
     @favorites = Favorite.where(user_id: @user.id)
   end
-
+  
   private
 
   def ensure_correct_user

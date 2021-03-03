@@ -53,13 +53,13 @@ class User < ApplicationRecord
 
   enum job_category_id: {
       "----":0,
-      individual: 1,
-      company: 2,
-      student: 3,
-      designer: 4,
-      stylist: 5,
-      hairmake: 6,
-      photographer: 7
+      個人: 1,
+      会社: 2,
+      学生: 3,
+      デザイナー: 4,
+      スタイリスト: 5,
+      ヘアーメイク: 6,
+      フォトグラファー: 7
     }
 
     enum based_in:{
