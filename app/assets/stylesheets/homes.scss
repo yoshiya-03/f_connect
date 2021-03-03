@@ -163,7 +163,6 @@ a:focus, img:focus, button:focus, .btn:focus {
   border-radius: 0;
   background: rgba(255,255,255,0.7);
   font-family: 'Oranienbaum'
-
 }
 
 
@@ -261,7 +260,7 @@ header[role="header"] > hgroup nav .nav-tabs>li.active>a, header[role="header"] 
 
 header[role="header"] footer{ text-align:right}
 
-header[role="header"] footer > p,footer.mobile p{ font-size:12px; line-height:50px; color:#353535; font-weight:400}
+header[role="header"] footer > p,footer.mobile p{ font-size:12px; line-height:80px; color:#353535; font-weight:400}
 
 header[role="header"] footer > p > i,footer.mobile p i{ color:#e84d49; display:inline-block; padding:0 5px}
 
@@ -271,7 +270,7 @@ footer.mobile{ display:none}
 
 article[role="countdown"].countdown-pan{ padding:20px 0 0 30px}
 
-article[role="countdown"].countdown-pan h2{font-family: 'Oranienbaum', serif; padding:0; margin:0; font-size:24px; line-height:37px; text-transform:uppercase; font-weight:400; letter-spacing:3px}
+article[role="countdown"].countdown-pan h2{font-family: 'Oranienbaum', serif; padding:0; margin:0; font-size:24px; line-height:60px; text-transform:uppercase; font-weight:400; letter-spacing:3px}
 
 article[role="countdown"].countdown-pan h2 > span{ font-size:72px; line-height:72px; position:relative; letter-spacing:inherit; display:inline-block}
 
@@ -281,9 +280,9 @@ article[role="countdown"].countdown-pan > p{ text-transform:uppercase; font-weig
 
 /*===== Page-title ===*/
 
-article header.page-title h2{ text-align:center;font-family: 'Oranienbaum', serif; text-transform:uppercase; font-size:24px; line-height:36px; color:white; font-weight:400; letter-spacing:3px; position:relative; margin-bottom:36px; padding:0; margin-top:0}
+article header.page-title h2{ text-align:center;font-family: 'Oranienbaum', serif; text-transform:uppercase; font-size:24px; line-height:60px; color:white; font-weight:400; letter-spacing:3px; position:relative; margin-bottom:36px; padding:0; margin-top:20px}
 
-article header.page-title h2:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-12px; margin:0 auto; background-color:#e84d49}
+article header.page-title h2:after{ content:""; display:block; width:98px; height:3px; left:0; right:0; bottom:-12px; margin:0 auto; background-color:#e84d49}
 
 /*===== Introduction ===*/
 

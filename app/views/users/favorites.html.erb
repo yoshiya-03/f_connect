@@ -7,7 +7,7 @@
             <% current_user.favorite_posts.each do |post| %>
                 <%= link_to post_path(post.id) do %>
                  <div class="card">
-                    <%= attachment_image_tag post, :image, :fill, 300, 300, fallback: "no-image.jpg", class:"card-img-top" %>
+                    <%= attachment_image_tag post, :image, :fill, 300, 300, fallback: "post_no_image.jpg", class:"card-img-top" %>
                   <div class="card-body">
                       <p class="card-title">タイトル : <%= post.title %></p>
                       <p>投稿者: <%= post.user.name %></p>

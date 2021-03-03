@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
    	get 'followers' => 'relationships#followers', as: 'followers'
+   	member do
+   	  get 'rooms/index'
+   	end
   end
 
   get 'user/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
@@ -29,8 +32,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  
   get "users/:id/favorites" => "users#favorites"
-  get 'rooms/index'
+
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
 

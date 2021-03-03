@@ -33,27 +33,27 @@ header {
 }
 
 a.text-light.fas.fa-bell {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 a.text-light.fas.fa-newspaper {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 a.text-light.fa.fa-tasks {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 
-  .header_image {
-		display: block;
-		margin: auto;
-		width: 80px;
-		height: 55px;
-		font-size: 0;
-	  background-image: image-url('header1.jpg');
-	  background-size: 80px;
-	}
+.header_image {
+	display: block;
+	margin: auto;
+	width: 80px;
+	height: 55px;
+	font-size: 0;
+  background-image: image-url('header1.jpg');
+  background-size: 80px;
+}
 
 
 
@@ -91,7 +91,7 @@ html, body {
 .menu-trigger {
   position: relative;
   width: 50px;
-  height: 40px;
+  height: 43px;
 }
 .menu-trigger span {
   position: absolute;
@@ -123,6 +123,7 @@ html, body {
   transform: translateY(-20px) rotate(45deg);
   background-color: #fff;
 }
+
 /* ------------------------ */
 /* ------ spメニュー ------ */
 /* ------------------------ */
