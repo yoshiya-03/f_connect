@@ -50,5 +50,8 @@ https://app.diagrams.net/#G1SXaQNr9yqFdARudUHWAI2M1V8MvKcJdr
 - O-DAN https://o-dan.net/ja/
 - LOOSE DRAWING https://loosedrawing.com/
 - ILLUST NAVI https://illust-navi.com/
+- 
+ ## 制作時間
+ -約200h
 
 
