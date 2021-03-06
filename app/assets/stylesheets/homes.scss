@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .top-text1 {
+  padding-bottom: 50px;
+  padding-top: 50px;
   color: #00a9bf;
   font-size: 27px;
   font-family: 'Oranienbaum'
@@ -236,7 +238,7 @@ header[role="header"] > hgroup{background-color:rgba(255,255,255,0.7); overflow:
 
 header[role="header"] > hgroup > h1{ padding:0; margin:0; display:inline-block; position:relative; z-index:5}
 
-header[role="header"] > hgroup > h1 > a{ background-color:#353535; text-transform:uppercase; font-family: 'Oranienbaum', serif;text-align:center; font-size:24px; line-height:52px;color:#FFF ;display:inline-block; width:157px; font-weight:500; letter-spacing:5px;  }
+header[role="header"] > hgroup > h1 > a{ background-color:#353535; text-transform:uppercase; font-family: 'Oranienbaum', serif;text-align:center; font-size:24px; line-height:80px;color:#FFF ;display:inline-block; width:157px; font-weight:500; letter-spacing:5px;  }
 
 header[role="header"] > hgroup > h1 > a:hover{ text-decoration:none}
 
@@ -248,9 +250,9 @@ header[role="header"] > hgroup nav{ float:none; clear:both; text-align:center; d
 
 header[role="header"] > hgroup nav ul{ padding:0; margin:0; list-style:none; text-align:center; border:none}
 
-header[role="header"] > hgroup nav ul > li{ float:none; display:inline-block; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:400; margin:0 18.5px}
+header[role="header"] > hgroup nav ul > li{ float:none; display:inline-block; font-size:16px; text-transform:uppercase; letter-spacing:5px; font-weight:400; margin:0 18.5px}
 
-header[role="header"] > hgroup nav ul > li > a{border-radius:0;border:none; padding:0; line-height:52px; display:block;color:#353535}
+header[role="header"] > hgroup nav ul > li > a{border-radius:0;border:none; padding:0; line-height:75px; display:block;color:#353535}
 
 header[role="header"] > hgroup nav ul > li.active a,header[role="header"] > hgroup nav ul > li a:hover{ background-color: inherit; border:none; color:#e84d49}
 

@@ -3,9 +3,7 @@ class RelationshipsController < ApplicationController
 
 	def create
 		current_user.follow(params[:user_id])
-		@user.create_notification_follow!(current_user)
 		redirect_to request.referer
-
 	end
 
 	def destroy
@@ -14,12 +12,13 @@ class RelationshipsController < ApplicationController
 	end
 
 	def followings
+		#@userがフォローしているユーザー
 		user = User.find(params[:user_id])
 		@users = user.followings
-
 	end
 
   def followers
+  	#@userをフォローしているユーザー
 		user = User.find(params[:user_id])
 		@users = user.followers
   end
