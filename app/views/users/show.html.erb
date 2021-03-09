@@ -4,6 +4,9 @@
       <div class="row profile">
     	  <div class="col-lg-5">
           <table class="table">
+          <p id="notice">
+           <h6 class="notice"><%= notice %></h6>
+          </p>
             <tr>
               <th><%= attachment_image_tag @user, :profile_image, class: "img-thumbnail", fallback: "no-image.jpg", size: "100x100", class:"mt-3 rounded-circle";  %></th>
             </tr>

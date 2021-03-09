@@ -26,7 +26,8 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if
       @post.save
-      redirect_to post_path(@post), notice: "新規投稿しました。"
+      redirect_to post_path(@post)
+      flash[:notice] = "新規投稿しました！"
     else
       @tags = ActsAsTaggableOn::Tag.all
       render 'new'
@@ -53,7 +54,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: "編集しました"
+      redirect_to post_path(@post), notice: "投稿を編集しました！"
     else
       render "edit", notice: "編集に失敗しました"
     end
@@ -81,7 +82,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
     end
   end
-  
+
   def post_params
     params.require(:post).permit(:title, :image, :description, :tag_list)
   end
