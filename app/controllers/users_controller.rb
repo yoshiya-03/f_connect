@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
      redirect_to user_path(@user.id)
-     flash[:notice] = "プロフィールをを更新しました！"
+     flash[:notice] = "プロフィールを更新しました！"
     else
       render action: :"/"
     end
