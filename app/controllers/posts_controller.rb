@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @search = Post.ransack(params[:q])
     @posts = @search.result
     @tags = ActsAsTaggableOn::Tag.all
+   @posts = Post.all.page(params[:page]).per(9).order('updated_at DESC')
     # タグの一覧表示
     if params[:tag]
        @posts = Post.tagged_with(params[:tag])
