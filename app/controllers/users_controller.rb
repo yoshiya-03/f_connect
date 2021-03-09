@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = User.all
   end
-  
+
   def edit
     @user = current_user.id
   end
@@ -14,8 +14,9 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
      redirect_to user_path(@user.id)
+     flash[:notice] = "プロフィールをを更新しました！"
     else
-      render action: :edit
+      render action: :"/"
     end
   end
 
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @favorites = Favorite.where(user_id: @user.id)
   end
-  
+
   private
 
   def ensure_correct_user

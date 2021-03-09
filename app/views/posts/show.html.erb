@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-5">
+       <p id="notice">
+           <h6 class="notice"><%= notice %></h6>
+          </p>
       <div class="card" style="width: 21rem;">
           <%= attachment_image_tag @post, :image,size:'334x320', fallback: "post_no_image.jpg" %>
           <div class="card-body">
@@ -11,7 +14,7 @@
             <%= link_to user_path(@post.user.id) do %>
             <p>投稿者 : <%= @post.user.name %></p>
             <% end %>
-            <p>説明：<%= @post.description %></p>
+            <p>詳細：<%= @post.description %></p>
             <% if @post.user == current_user %>
             <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger"%>
             <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
