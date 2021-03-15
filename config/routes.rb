@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'homes/top'
   get 'homes/about'
+  get 'creators/student'
   get 'creators/designer'
   get 'creators/stylist'
   get 'creators/hairmake'
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  
+
   get "users/:id/favorites" => "users#favorites"
 
   get 'chat/:id' => 'chats#show', as: 'chat'

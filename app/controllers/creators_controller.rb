@@ -1,5 +1,9 @@
 class CreatorsController < ApplicationController
 
+  def student
+    @users = User.where(job_category_id: 3)
+  end 
+  
   def designer
     @users = User.where(job_category_id: 4)
   end
@@ -15,6 +19,7 @@ class CreatorsController < ApplicationController
   def photographer
     @users = User.where(job_category_id: 7)
   end
+  
 
   private
 
