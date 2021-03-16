@@ -33,8 +33,8 @@ fashion業界特化型のマッチングサービス
 ## 設計書
 
 ### 機能一覧
-[ここ][https://docs.google.com/spreadsheets/d/1eiTTEmT58mxVCQ1rZEBQ7AbCid36uLgqfuRdmq8NtjU/edit#gid=0
-]
+[機能一覧]:https://docs.google.com/spreadsheets/d/1eiTTEmT58mxVCQ1rZEBQ7AbCid36uLgqfuRdmq8NtjU/edit#gid=0
+
 
 ### ER図
 https://app.diagrams.net/#G1SXaQNr9yqFdARudUHWAI2M1V8MvKcJdr
