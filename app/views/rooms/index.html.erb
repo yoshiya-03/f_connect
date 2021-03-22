@@ -1,0 +1,24 @@
+<h3 class="text-center">メッセージ一覧</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <table class="table">
+          <thead>
+            <tr>
+            <% @rooms.each do |room| %>
+            　 <th><%= link_to user_path(room) do %>
+              <%= opponent_user(room) %>
+              <small><%= most_new_message_preview(room) %></small></th>
+              <% end %>
+              </tr>
+            <% end %>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+

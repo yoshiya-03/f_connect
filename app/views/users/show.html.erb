@@ -1,0 +1,55 @@
+<h2 class="col-md-3 offset-md-1">User Page</h2>
+  <h4 class="text-center">U WORKS</h4>
+    <div class="container">
+      <div class="row profile">
+    	  <div class="col-lg-5">
+          <table class="table">
+          <p id="notice">
+           <h6 class="notice"><%= notice %></h6>
+          </p>
+            <tr>
+              <th><%= attachment_image_tag @user, :profile_image, class: "img-thumbnail", fallback: "no-image.jpg", size: "100x100", class:"mt-3 rounded-circle";  %></th>
+            </tr>
+              <tr>
+                <th><i class="fas fa-user"> ユーザーネーム</i></th>
+                <th><%= @user.name %></th>
+              </tr>
+              <tr>
+              <th><i class="fas fa-flag"> 活動拠点</i></th>
+              <th><%= @user.based_in %></th>
+              </tr>
+              <tr>
+                <th><i class="fas fa-user-tag"> 職種</i></th>
+                <th><%= @user.job_category_id %></th>
+              </tr>
+              <tr>
+                <th><i class="fas fa-pen"> 自己紹介</i></th>
+                <th><%= @user.introduction %></th>
+              </tr>
+              <tr>
+                <th><%= link_to "フォロー中#{@user.followings.count}", user_followings_path(@user), class: "fas fa-user" %></th>
+                <th><%= link_to "フォロワー#{@user.followers.count}", user_followers_path(@user), class: "fas fa-users"%></th>
+              </tr>
+              <%= render 'users/follow_form' %>
+              <% if @user.id == current_user.id %>
+                <%= link_to " 編集する ", edit_user_path(current_user.id), class: "fas fa-user-edit btn btn-outline-success" %>
+                <%= link_to " ブックマーク一覧 ", favorites_users_path, class: "fas fa-clipboard-check btn btn-outline-primary" %>
+                <%= link_to ' DM一覧', rooms_index_user_path(current_user.id), class: "far fa-comments btn btn-outline-info" %>
+              <% end %>
+              <% if current_user != @user %>
+                <%= link_to " chatを始める ", chat_path(@user.id), class: "far fa-comment-dots btn btn-outline-info"%></i>
+              <% end %>
+        </table>
+      </div>
+
+      <div class='col-lg-7 offset-xs-1'>
+      <div class="a">
+         <% @user.works_images.each do |image| %>
+         <div class="b"><%= attachment_image_tag image, :works_image, class: "default_image", size: "670x500" %></div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

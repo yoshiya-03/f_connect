@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>F Connect</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/ >
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- style -->
+    <!-- bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- responsive -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+  </head>
+
+  <body>
+     <%= render 'layouts/header' %>
+    <main>
+      <%= yield %>
+    </main>
+
+
+    <footer>
+  <div class="copyright">
+    <p class="mb-0">&copy 2021 - F - CONNECT -   All rights reserved. Floxi 2021 Made with <i class="fa fa-heart" aria-hidden="true"></i> by Designstub</p>
+  </div>
+  <div class="social">
+    <a href="/" class="support">Home</a>
+    <a href="#" class="face">f</a>
+    <a href="#" class="tweet">t</a>
+    <a href="#" class="linked">in</a>
+  </div>
+</footer>
+
+  </body>
+</html>

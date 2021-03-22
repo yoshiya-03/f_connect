@@ -1,0 +1,35 @@
+<%= form_with model: @post, local:true do |f| %>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="form-group">
+            <table class="table">
+              <%= render 'layouts/errors' %>
+              <h1>案件依頼</h1>
+              <tr>
+                <th><h4>画像</h4></th>
+                <th><%= f.attachment_field :image  %></th>
+              </tr>
+              <tr>
+                 <th><h4>タイトル</h4> </th>
+                 <th><%= f.text_field :title, class: 'form-control'  %> </th>
+              </tr>
+              <tr>
+                <th><h4>説明</h4> </th>
+                <th><%= f.text_area :description, class: 'form-control' %> </th>
+               </tr>
+               <tr>
+                 <th><%= f.submit '投稿', class: "btn btn-success" %> </th>
+               </tr>
+               <tr>
+                 <div class="form-group">
+                  <%= f.label :タグ %>
+                  <%= f.text_field :tag_list, value: @post.tag_list.join(','), placeholder: "「,」で区切れます", class: 'form-control'  %>
+                </div>
+              </tr>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
