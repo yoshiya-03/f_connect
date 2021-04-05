@@ -1,5 +1,7 @@
+
+
 <div class="container">
-  <div class="row">
+  <div class="card-body">
     <h4 align="center">本当に退会しますか？</h4>
     <br>
     <div align="center">
@@ -11,8 +13,10 @@
     <br>
     </div>
     <div align="center">
-      <%= link_to "退会しない", user_path(@user),  class: "btn btn-primary" %>
+       <%= link_to "退会しない", user_path(@user),  class: "btn btn-primary" %>
       <%= link_to "退会する", user_withdraw_path(current_user.id), method: :patch, class: "btn btn-danger" %>
+    </div>
     </div>
   </div>
 </div>
+
