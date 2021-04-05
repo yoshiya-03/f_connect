@@ -5,12 +5,12 @@
       <div class="col-lg-6 offset-lg-3">
       <div class="form-group">
         <table class="table">
-      		<h4>プロフィール</h4>
+      		<h4>プロフィール編集</h4>
             <tr>
    	          <th><%= attachment_image_tag current_user, :profile_image, size: "100x100"%></th>
    	        </tr>
    	        <tr>
-              <th><label for="inputImage">ProfileImage</label>
+              <th><f.label for="inputImage", class: "fas fa-images">ProfileImage</label>
               <th><%= f.attachment_field :profile_image %></th></th>
             </tr>
             <tr>
